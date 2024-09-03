@@ -3,13 +3,19 @@ const path = require("path");
 const port = 3000;
 
 const app = express();
+app.set("view engine", "pug"); // Replace 'pug' with your chosen engine
+app.set("views", path.join(__dirname, "views"));
 
 app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "./views/index.html"));
+  res.render("index");
 });
 
-app.get("/home", (req, res) => {
-  res.sendFile(path.join(__dirname, "./views/home.html"));
+app.get("/cards", (req, res) => {
+  res.render("card", { prompt: "chungus" });
+});
+
+app.get("/hello", (req, res) => {
+  res.render("hello");
 });
 
 app.listen(port, () => {
