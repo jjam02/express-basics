@@ -8,6 +8,7 @@ app.set("views", path.join(__dirname, "views"));
 
 app.get("/", (req, res) => {
   res.render("index");
+  console.log("INDEX PAGE");
 });
 
 app.get("/cards", (req, res) => {
@@ -16,6 +17,7 @@ app.get("/cards", (req, res) => {
 
 app.get("/hello", (req, res) => {
   res.render("hello");
+  console.log("HELLO PAGE");
 });
 
 app.listen(port, () => {
