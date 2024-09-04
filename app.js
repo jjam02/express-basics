@@ -2,7 +2,8 @@ const express = require("express");
 const path = require("path");
 const cookieParser = require("cookie-parser");
 const port = 3000;
-const routes = require("./routes");
+const mainRoutes = require("./routes");
+const cardRoutes = require("./routes/cards");
 
 const app = express();
 
@@ -12,7 +13,8 @@ app.use(cookieParser());
 app.set("view engine", "pug"); // Replace 'pug' with your chosen engine
 app.set("views", path.join(__dirname, "views"));
 
-app.use(routes);
+app.use(mainRoutes);
+app.use("/cards", cardRoutes);
 
 app.use((req, res, next) => {
   const err = new Error("Not Found");

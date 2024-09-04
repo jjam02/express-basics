@@ -11,10 +11,6 @@ router.get("/", (req, res) => {
   console.log("INDEX PAGE");
 });
 
-router.get("/cards", (req, res) => {
-  res.render("card", { prompt: "test card" });
-});
-
 router.get("/hello", (req, res) => {
   res.render("hello", { name: req.cookies.username });
   console.log("HELLO PAGE");

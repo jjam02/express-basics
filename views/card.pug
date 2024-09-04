@@ -5,6 +5,9 @@ html(lang='eng')
         header
             h1 Flash Cards
         section#content 
-            h2= prompt
+            h2= text 
+
+            if side === "question" && hint 
+                h4 Hint: #{hint}
         footer 
             p an app to study 
