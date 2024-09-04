@@ -8,7 +8,7 @@ router.get("/:id", (req, res) => {
   const { id } = req.params;
   const text = cards[id][side];
   const { hint } = cards[id];
-  const templateData = { text, hint, side };
+  const templateData = { text, hint, side, id };
   res.render("card", templateData);
 });
 

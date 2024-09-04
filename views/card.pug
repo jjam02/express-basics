@@ -1,13 +1,14 @@
-html(lang='eng')
-    head  
-        title Flashcards
-    body 
-        header
-            h1 Flash Cards
-        section#content 
-            h2= text 
+extends layout.pug
+block content
+    h2= text 
 
-            if side === "question" && hint 
-                h4 Hint: #{hint}
-        footer 
-            p an app to study 
+    if side === "question"
+        if hint
+            h4 
+                i Hint: #{hint} 
+        a(href=`${id}?side=answer`)
+            button answer  
+    if side === "answer"
+        a(href=`${id}?side=question `)
+            button question   
+
