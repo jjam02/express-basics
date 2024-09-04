@@ -40,6 +40,18 @@ app.post("/goodbye", (req, res) => {
   res.redirect("/hello");
 });
 
+app.use((req, res, next) => {
+  const err = new Error("Not Found");
+  err.status = 404;
+  next(err);
+});
+
+app.use((err, req, res, next) => {
+  res.locals.error = err;
+  res.status(err.status);
+  res.render("error", { error: err });
+});
+
 app.listen(port, () => {
   console.log(`server is running listening on port ${port}`);
 });
