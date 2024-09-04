@@ -3,6 +3,6 @@ block content
     section#content
         if name 
             h2 Weclome, #{name}!
-        a(href='/hello')
-            button HELLO PAGE
+        form(action="/goodbye" method="post")
+            button(type='submit') GOODBYE
 
