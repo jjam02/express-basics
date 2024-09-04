@@ -1,7 +1,8 @@
 extends layout.pug 
 block content 
-    section#content 
-        h2 Weclome, Student!
+    section#content
+        if name 
+            h2 Weclome, #{name}!
         a(href='/hello')
             button HELLO PAGE
 
