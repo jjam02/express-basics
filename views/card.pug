@@ -10,5 +10,16 @@ block content
             button answer  
     if side === "answer"
         a(href=`${id}?side=question `)
-            button question   
+            button question
+    br
+    br
+    a(href=`${parseInt(id)===0 ? 0:parseInt(id)-1}?side=${side} `)
+        button prev 
+
+    a(href=`${parseInt(id)===max ? max:parseInt(id)+1}?side=${side} `)
+        button next 
+    br 
+    br  
+    a(href=`${Math.floor(Math.random() * (max - 0 + 1)) + 0}?side=${side} `)
+        button random card      
 
