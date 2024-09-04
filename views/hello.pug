@@ -1,5 +1,11 @@
 extends layout.pug 
 block content 
-    h2 HELLO PAGE FOR USERS
+    if name 
+        h2 Weclome, #{name}!
+    else
+        form(action='/hello' method='post' )
+            label Please input your name here: 
+                input(type='text' name='username' ,placeholder="Type your username")
+            button(type='submit') SUBMIT
     a(href='/')
         button HOME
