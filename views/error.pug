@@ -1,9 +1,9 @@
 extends layout.pug 
 block content 
     section.desk 
-        h1 #{error.message} - #{error.status}
+        h1 #{error.message} - Status: #{error.status}
         img(src="/static/img/desk.svg" alt="image of a desk")
-        a.button-primary-small(href="/hello") Go Home 
+        a.button-primary-small(href="/") Go Home 
         .paper 
             pre.stack-trace=error.stack
         .tear
